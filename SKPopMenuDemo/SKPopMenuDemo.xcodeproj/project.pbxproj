@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116455482005A5CC00B968FB /* UIView+DCAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 116455472005A5CC00B968FB /* UIView+DCAnimationKit.m */; };
+		1164554B2005A5F400B968FB /* SKDCAnimationPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164554A2005A5F400B968FB /* SKDCAnimationPopView.m */; };
 		11B9E9701FFBBEF600C4B953 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E96F1FFBBEF600C4B953 /* AppDelegate.m */; };
 		11B9E9731FFBBEF600C4B953 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E9721FFBBEF600C4B953 /* ViewController.m */; };
 		11B9E9781FFBBEF600C4B953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B9E9771FFBBEF600C4B953 /* Assets.xcassets */; };
@@ -46,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		116455462005A5CC00B968FB /* UIView+DCAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCAnimationKit.h"; sourceTree = "<group>"; };
+		116455472005A5CC00B968FB /* UIView+DCAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCAnimationKit.m"; sourceTree = "<group>"; };
+		116455492005A5F400B968FB /* SKDCAnimationPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKDCAnimationPopView.h; sourceTree = "<group>"; };
+		1164554A2005A5F400B968FB /* SKDCAnimationPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKDCAnimationPopView.m; sourceTree = "<group>"; };
 		11B9E96B1FFBBEF600C4B953 /* SKPopMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKPopMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B9E96E1FFBBEF600C4B953 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11B9E96F1FFBBEF600C4B953 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,6 +123,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		116455442005A5CC00B968FB /* DCSeriesAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				116455452005A5CC00B968FB /* DCAnimation */,
+				116455492005A5F400B968FB /* SKDCAnimationPopView.h */,
+				1164554A2005A5F400B968FB /* SKDCAnimationPopView.m */,
+			);
+			path = DCSeriesAnimation;
+			sourceTree = "<group>";
+		};
+		116455452005A5CC00B968FB /* DCAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				116455462005A5CC00B968FB /* UIView+DCAnimationKit.h */,
+				116455472005A5CC00B968FB /* UIView+DCAnimationKit.m */,
+			);
+			path = DCAnimation;
+			sourceTree = "<group>";
+		};
 		11B9E9621FFBBEF600C4B953 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +201,7 @@
 		11B9E9A01FFBC27A00C4B953 /* SKPopFamily */ = {
 			isa = PBXGroup;
 			children = (
+				116455442005A5CC00B968FB /* DCSeriesAnimation */,
 				11B9E9A21FFBC33F00C4B953 /* SKPopMenuListView.h */,
 				11B9E9A11FFBC33F00C4B953 /* SKPopMenuListView.m */,
 			);
@@ -372,6 +398,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1164554B2005A5F400B968FB /* SKDCAnimationPopView.m in Sources */,
+				116455482005A5CC00B968FB /* UIView+DCAnimationKit.m in Sources */,
 				11B9E9C51FFBC36500C4B953 /* MASConstraintMaker.m in Sources */,
 				11B9E9731FFBBEF600C4B953 /* ViewController.m in Sources */,
 				11B9E97E1FFBBEF600C4B953 /* main.m in Sources */,
@@ -544,6 +572,7 @@
 				DEVELOPMENT_TEAM = R9LD73WP5P;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SKPopMenuDemo/pop.pch";
 				INFOPLIST_FILE = SKPopMenuDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sk.SKPopMenuDemo22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,6 +588,7 @@
 				DEVELOPMENT_TEAM = R9LD73WP5P;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SKPopMenuDemo/pop.pch";
 				INFOPLIST_FILE = SKPopMenuDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sk.SKPopMenuDemo22;
 				PRODUCT_NAME = "$(TARGET_NAME)";

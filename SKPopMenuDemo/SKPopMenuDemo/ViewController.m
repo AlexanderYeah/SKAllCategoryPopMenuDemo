@@ -9,14 +9,14 @@
 #import "ViewController.h"
 
 #import "SKPopMenuListView.h"
-
+#import "SKDCAnimationPopView.h"
 @interface ViewController ()<SKPopMenuSelectDelegate>
 /** 弹出view 背景view */
 @property (nonatomic,strong)UIView *popBgView;
 /** Sample 1  弹出视图 */
 @property (nonatomic,strong)SKPopMenuListView *popListView;
-
-
+/**move Label*/
+@property (nonatomic,strong)SKDCAnimationPopView *dcAniamtionView;
 
 @end
 
@@ -49,7 +49,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	NSArray *menuArr = @[@"Sample1",@"Sample2",@"Sample3",@"Sample4",@"Sample5",@"Sample6"];
+	NSArray *menuArr = @[@"Sample1",@"Bounces",@"Tada",@"Pulse",@"Shake",@"Swing",@"Snap",@"Bounce2",@"Expand",@"Hinge",@"Drop"];
 	CGFloat btn_padding = 30;
 	CGFloat btn_w = (SCREEN_WIDTH - 5 * btn_padding)/4;
 	CGFloat btn_h = 35;
@@ -74,6 +74,9 @@
 		[self.view addSubview:btn];
 		
 	}
+	
+	
+
 	
 	
 }
@@ -105,6 +108,56 @@
 		
 	}
     break;
+    case 1:{
+		// Sample2
+		[self dcBounceShow];
+	}
+	break;
+	case 2:{
+		[self dcTadaShow];
+	
+	}
+	break;
+	case 3:{
+		[self dcPulseShow];
+	
+	}
+	break;
+	case 4:{
+		[self dcShakeShow];
+	
+	}
+	break;
+	case 5:{
+		[self dcSwingShow];
+	
+	}
+	break;
+	case 6:{
+		[self dcSnapShow];
+	
+	}
+	break;
+	case 7:{
+		[self dcBounceTwoShow];
+	
+	}
+	break;
+	case 8:{
+		[self dcExpandShow];
+	
+	}
+	break;
+	case 9:{
+		[self dcCompressShow];
+	
+	}
+	break;
+	case 10:{
+		[self dcDropShow];
+	
+	}
+	break;
 
   default:
     break;
@@ -133,6 +186,165 @@
     } completion:nil];
 
 }
+
+- (void)dcBounceShow
+{
+	
+		// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"bounce";
+	[self.dcAniamtionView.moveLabel bounce:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+
+}
+
+- (void)dcTadaShow
+{
+	// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	
+	self.dcAniamtionView.moveLabel.text = @"tada";
+	[self.dcAniamtionView.moveLabel tada:nil];
+	[self.view addSubview:self.dcAniamtionView];
+	
+}
+
+
+- (void)dcPulseShow
+{
+	// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Pulse";
+	[self.dcAniamtionView.moveLabel pulse:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+}
+
+- (void)dcShakeShow
+{
+	// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Shake";
+	[self.dcAniamtionView.moveLabel shake:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+}
+
+- (void)dcSwingShow
+{
+	// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Swing";
+	[self.dcAniamtionView.moveLabel swing:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+}
+
+- (void)dcSnapShow
+{
+	// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Snap";
+	
+	// different 从四个方向可以弹出
+
+	[self.dcAniamtionView.moveLabel snapIntoView:self.dcAniamtionView direction:DCAnimationDirectionTop];
+	[self.view addSubview:self.dcAniamtionView];
+
+}
+
+
+- (void)dcBounceTwoShow
+{
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Bounce2";
+	
+	// different 从四个方向可以弹出
+	[self.dcAniamtionView.moveLabel bounceIntoView: self.dcAniamtionView direction:DCAnimationDirectionLeft];
+	
+	
+	[self.view addSubview:self.dcAniamtionView];
+
+}
+- (void)dcExpandShow{
+		// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Expand";
+	[self.dcAniamtionView.moveLabel expandIntoView:self.dcAniamtionView finished:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+	
+}
+
+- (void)dcCompressShow
+{
+		// DCView
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Swing";
+	[self.dcAniamtionView.moveLabel hinge:nil];
+	[self.view addSubview:self.dcAniamtionView];
+
+
+}
+- (void)dcDropShow
+{
+	SKDCAnimationPopView *view = [[SKDCAnimationPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+	_dcAniamtionView = view;
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dcTap:)];
+	tap.numberOfTapsRequired = 1;
+	[view addGestureRecognizer:tap];
+	self.dcAniamtionView.moveLabel.text = @"Swing";
+	[self.dcAniamtionView.moveLabel drop:nil];
+	[self.view addSubview:self.dcAniamtionView];
+	
+}
+
+#pragma mark -  SKDCView 的点击
+- (void)dcTap:(UITapGestureRecognizer *)tap
+{
+
+	[self.dcAniamtionView removeFromSuperview];
+	self.dcAniamtionView = nil;
+
+}
+
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
